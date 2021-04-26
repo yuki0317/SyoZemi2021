@@ -87,12 +87,12 @@ Windows Subsystem for Linux（Linux 用 Windows サブシステム）」と「�
 </li>
 <li>
 <p>環境変数 JAVA_HOME と PATH を設定する.<br>
-<code>export JAVA_HOME=”/usr/lib/jvm/java-14-openjdk-amd64” &gt;&gt; ~/.bashrc</code><br>
-<code>echo PATH=${JAVA_HOME}/bin:${PATH} &gt;&gt; ~/.zshrc</code><br>
+<code>echo export JAVA_HOME=”/usr/lib/jvm/java-14-openjdk-amd64” &gt;&gt; ~/.bashrc</code><br>
+<code>echo PATH=${JAVA_HOME}/bin:\${PATH} &gt;&gt; ~/.bashrc</code><br>
 以下のコマンドで正しく追記されているかを確認する.<br>
-<code>tail ~/.zshrc</code><br>
+<code>tail ~/.bashrc</code><br>
 問題なければ以下のコマンドで反映.<br>
-<code>source ~/.zshrc</code></p>
+<code>source ~/.bashrc</code></p>
 </li>
 <li>
 <p>以下のコマンドを実行してインストールを確認.<br>
