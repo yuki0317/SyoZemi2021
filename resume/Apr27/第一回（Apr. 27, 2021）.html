@@ -138,9 +138,10 @@
 </ol>
 <ul>
 <li>以下のコマンドでインストール.<br>
-<code>brew tap crotwell/crotwell &amp;&amp; brew install taup</code></li>
+<code>curl -O http://www.seis.sc.edu/downloads/TauP/TauP-2.5.0.tgz &amp;&amp; tar zxf TauP-2.5.0.tgz</code></li>
+<code>sudo mv TauP-2.5.0 /usr/local</code></li>
 <li>環境変数を設定する.<br>
-<code>echo export TAUP_HOME=/opt/homebrew/Cellar/taup/2.5.0 &gt;&gt; ~/.zshrc</code><br>
+<code>echo export TAUP_HOME=/usr/local/TauP-2.5.0 &gt;&gt; ~/.zshrc</code><br>
 <code>echo export PATH=${TAUP_HOME}/bin:\$PATH &gt;&gt; ~/.zshrc</code><br>
 以下のコマンドで正しく追記されているかを確認する.<br>
 <code>tail ~/.zshrc</code><br>
