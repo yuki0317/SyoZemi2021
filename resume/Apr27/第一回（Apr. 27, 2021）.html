@@ -47,8 +47,8 @@
 <ol>
 <li>GNU Fortranコンパイラ</li>
 <li>Java14</li>
-<li>地図描画ソフト(Generic Mapping Tools)</li>
 <li>地震波形解析ソフト(Seismic Analysis Code)</li>
+<li>地図描画ソフト(Generic Mapping Tools)</li>
 <li>走時計算ソフトウェア(TauP)</li>
 <li>理論地震波形計算ソフトウェア(DSM)</li>
 <li>地震波形解析ツール(Kibrary)</li>
@@ -98,24 +98,6 @@
 <pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">OpenJDK 64-Bit Server VM AdoptOpenJDK (build 14+36, mixed mode, sharing)
 </div></div></div></pre>
 </div><div class="cell markdown-cell"><ol start="3">
-<li>地図描画ソフト(GMT)のインストール</li>
-</ol>
-<ul>
-<li>M1 Macの場合は以下のコマンドで別途x86版homebrewをインストールする.<br>
-<code>arch -x86_64　/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code><br>
-<code>arch -x86_64 /usr/local/Homebrew/bin/brew install gmt</code><br>
-<code>brew ghostscript graphicsmagick ffmpeg</code></li>
-<li>Intel CPU搭載のMacの場合は、以下のコマンドを実行してGMTと関連するライブラリをインストール.<br>
-<code>brew install gmt ghostscript graphicsmagick ffmpeg</code></li>
-<li>以下のテストを実行して正しくインストールされているかを確認する.<br>
-以下のリンクからスクリプトファイルをダウンロード.<br>
-<a href="https://bit.ly/32AEad4">https://bit.ly/32AEad4</a><br>
-以下のコマンドを実行して日本地図が表示されればOK.<br>
-<code>sh checkGMT.sh</code></li>
-<li>問題がなければ、日本地図が描画される.<br>
-<img src="resources/788557FC8A570E983CE4FB3CBDB4530A.jpg" alt="IMAGE" width="1240" height="1755"></li>
-</ul>
-</div><div class="cell markdown-cell"><ol start="4">
 <li>地震波形解析ソフト(SAC)のインストール</li>
 </ol>
 <ul>
@@ -132,6 +114,24 @@
 <li>以下のコマンドでXquartzをインストール<br>
 <code>brew install xquartz --cask</code></li>
 <li>ターミナル上で<code>sac</code>と入力してSACのプロンプトが表示されればOK.</li>
+</ul>
+</div><div class="cell markdown-cell"><ol start="4">
+<li>地図描画ソフト(GMT)のインストール</li>
+</ol>
+<ul>
+<li>M1 Macの場合は以下のコマンドで別途x86版homebrewをインストールする.<br>
+<code>arch -x86_64　/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code><br>
+<code>arch -x86_64 /usr/local/Homebrew/bin/brew install gmt</code><br>
+<code>brew ghostscript graphicsmagick ffmpeg</code></li>
+<li>Intel CPU搭載のMacの場合は、以下のコマンドを実行してGMTと関連するライブラリをインストール.<br>
+<code>brew install gmt ghostscript graphicsmagick ffmpeg</code></li>
+<li>以下のテストを実行して正しくインストールされているかを確認する.<br>
+以下のリンクからスクリプトファイルをダウンロード.<br>
+<a href="https://bit.ly/32AEad4">https://bit.ly/32AEad4</a><br>
+以下のコマンドを実行して日本地図が表示されればOK.<br>
+<code>sh checkGMT.sh</code></li>
+<li>問題がなければ、日本地図が描画される.<br>
+<img src="resources/788557FC8A570E983CE4FB3CBDB4530A.jpg" alt="IMAGE" width="1240" height="1755"></li>
 </ul>
 </div><div class="cell markdown-cell"><ol start="5">
 <li>走時計算ソフトウェア(TauP)のインストール</li>
