@@ -100,26 +100,6 @@ Windows Subsystem for Linux（Linux 用 Windows サブシステム）」と「�
 </li>
 </ul>
 </div><div class="cell markdown-cell"><ol start="3">
-<li>地図描画ソフト(GMT)のインストール</li>
-</ol>
-<ul>
-<li>以下のコマンドを実行してGMTをインストールする.<br>
-<code>sudo apt-get install gmt gmt-dcw gmt-gshhg</code><br>
-<code>sudo apt-get install ghostscript</code><br>
-<code>sudo apt-get install gdal-bin graphicsmagick ffmpeg</code></li>
-<li>
-<ul>
-<li>以下のテストを実行して正しくインストールされているかを確認する.<br>
-以下のリンクからスクリプトファイルをダウンロード.<br>
-<a href="https://bit.ly/32AEad4">https://bit.ly/32AEad4</a><br>
-以下のコマンドを実行して日本地図が表示されればOK.<br>
-<code>sh checkGMT.sh</code></li>
-</ul>
-</li>
-<li>問題がなければ、日本地図が描画される.<br>
-<img src="resources/788557FC8A570E983CE4FB3CBDB4530A.jpg" alt="IMAGE" width="1240" height="1755"></li>
-</ul>
-</div><div class="cell markdown-cell"><ol start="4">
 <li>地震波形解析ソフト(SAC)のインストール</li>
 </ol>
 <ul>
@@ -147,8 +127,33 @@ Download先はデフォルトのまま「インストール」.<br>
 <li><code>Windowsキー + r</code>を押して, shell:startupと入力して検索し、開いたファイルブラウザ(スタートアップ)にデスクトップに保存したファイルをドラッグ＆ドロップで移動.</li>
 <li>以下のコマンドでbashrcに設定を追加.<br>
 <code>echo export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0 &gt;&gt; ~/.bashrc</code><br>
-<code>source ~/.bashrc</code></li>
+<code>source ~/.bashrc</code><br>
+<code>sudo apt-get install -y lib</code></li>
 <li>ターミナル上で<code>sac</code>と入力してSACのプロンプトが表示されればOK.</li>
+<li>上記のコマンドでエラーが出る場合には、以下のコマンドを試してみてください.<br>
+<code>echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc</code><br>
+<code>source ~/.bashrc</code><br>
+<code>sudo apt-get install -y lib</code></li>
+</ul>
+</div><div class="cell markdown-cell"><ol start="4">
+<li>地図描画ソフト(GMT)のインストール</li>
+</ol>
+<ul>
+<li>以下のコマンドを実行してGMTをインストールする.<br>
+<code>sudo apt-get install gmt gmt-dcw gmt-gshhg</code><br>
+<code>sudo apt-get install ghostscript</code><br>
+<code>sudo apt-get install gdal-bin graphicsmagick ffmpeg</code></li>
+<li>
+<ul>
+<li>以下のテストを実行して正しくインストールされているかを確認する.<br>
+以下のリンクからスクリプトファイルをダウンロード.<br>
+<a href="https://bit.ly/32AEad4">https://bit.ly/32AEad4</a><br>
+以下のコマンドを実行して日本地図が表示されればOK.<br>
+<code>sh checkGMT.sh</code></li>
+</ul>
+</li>
+<li>問題がなければ、日本地図が描画される.<br>
+<img src="resources/788557FC8A570E983CE4FB3CBDB4530A.jpg" alt="IMAGE" width="1240" height="1755"></li>
 </ul>
 </div><div class="cell markdown-cell"><ol start="5">
 <li>走時計算ソフトウェア(TauP)のインストール</li>
