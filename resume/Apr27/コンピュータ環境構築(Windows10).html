@@ -128,12 +128,12 @@ Download先はデフォルトのまま「インストール」.<br>
 <li>以下のコマンドでbashrcに設定を追加.<br>
 <code>echo export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0 &gt;&gt; ~/.bashrc</code><br>
 <code>source ~/.bashrc</code><br>
-<code>sudo apt-get install -y lib</code></li>
+<code>sudo apt-get install -y libncurses5</code></li>
 <li>ターミナル上で<code>sac</code>と入力してSACのプロンプトが表示されればOK.</li>
 <li>上記のコマンドでエラーが出る場合には、以下のコマンドを試してみてください.<br>
 <code>echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc</code><br>
 <code>source ~/.bashrc</code><br>
-<code>sudo apt-get install -y lib</code></li>
+<code>sudo apt-get install -y libncurses5</code></li>
 <li>以下のコマンドでテストデータをプロットする.<br>
 <code>wget https://bit.ly/3ezSV5s -O gaussian8s.sac<br>
 <code>sac</code><br>
