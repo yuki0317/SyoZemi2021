@@ -88,7 +88,7 @@ Windows Subsystem for Linux（Linux 用 Windows サブシステム）」と「�
 <li>
 <p>環境変数 JAVA_HOME と PATH を設定する.<br>
 <code>echo export JAVA_HOME=”/usr/lib/jvm/java-14-openjdk-amd64” &gt;&gt; ~/.bashrc</code><br>
-<code>echo PATH=${JAVA_HOME}/bin:\${PATH} &gt;&gt; ~/.bashrc</code><br>
+<code>echo export PATH=${JAVA_HOME}/bin:\${PATH} &gt;&gt; ~/.bashrc</code><br>
 以下のコマンドで正しく追記されているかを確認する.<br>
 <code>tail ~/.bashrc</code><br>
 問題なければ以下のコマンドで反映.<br>
@@ -161,9 +161,9 @@ Download先はデフォルトのまま「インストール」.<br>
 <code>echo export TAUP_HOME=/usr/local/TauP-2.5.0 &gt;&gt; ~/.bashrc</code><br>
 <code>echo export PATH=${TAUP_HOME}/bin:\$PATH &gt;&gt; ~/.bashrc</code><br>
 以下のコマンドで正しく追記されているかを確認する.<br>
-<code>tail ~/.zshrc</code><br>
+<code>tail ~/.bashrc</code><br>
 問題なければ以下のコマンドで反映.<br>
-<code>source ~/.zshrc</code></li>
+<code>source ~/.bashrc</code></li>
 <li>以下のコマンドを実行して確認.<br>
 <code>taup_time -mod prem -h 400 -deg 80 -ph P,PcP,S,ScS</code><br>
 問題なければ以下のように表示される.</li>
