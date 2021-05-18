@@ -82,16 +82,16 @@
 <code>make tish</code></li>
 <li>以下のコマンドを実行してテスト計算を行い、ファイルが作成されることを確認する. 作成されたファイルはexamples/にtest1.1.spc及びtest1.2.spcとして格納されている.</li>
 </ul>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">./tish &lt; examples/test1.inf
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">./tish &lt; examples/test1.inf 
 </div></div></div></pre>
 <h3>3.1 理論地震波形の計算</h3>
 <ol>
 <li>以下のコマンドで必要なファイルをダンロードする.</li>
 </ol>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">wget https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line"> cd &amp;&amp; wget https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz
 </div></div></div></pre>
 <p>もしくは、</p>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">curl https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz -O -J -L
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">cd &amp;&amp; curl https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz -O -J -L
 </div></div></div></pre>
 <ol start="2">
 <li>以下のコマンドでダウンロードした圧縮ファイルを解凍する.</li>
