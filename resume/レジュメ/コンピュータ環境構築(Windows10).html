@@ -1,0 +1,216 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- common.css -->
+      <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: -apple-system, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;height: auto;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 90%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+      <!-- ace-static.css -->
+      <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+      <style>.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}</style>
+      <!-- export.css -->
+      <style>
+        body{margin:0 auto;max-width:800px;line-height:1.4}
+        #nav{margin:5px 0 10px;font-size:15px}
+        #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+        #contentarea{font-size:15px;margin:16px 0}
+        .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+        .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+        .latex-cell{white-space:pre-wrap;}
+      </style>
+      <!-- User CSS -->
+      <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+    </head>
+    <body>
+      <div id="nav"><div>Next: <a href='第一回（Apr. 27, 2021）.html'>第一回（Apr. 27, 2021）</a>, Previous: <a href='第二回（May 11, 2021）.html'>第二回（May 11, 2021）</a>, Up: <a href='index.html'>Index</a></div></div>
+      <div id="titlearea">
+        <h2>コンピュータ環境構築(Windows10)</h2>
+      </div>
+      <div id="contentarea"><div class="cell markdown-cell"><ul>
+<li>以下の7つのツールをインストールする.</li>
+</ul>
+<ol start="0">
+<li>WSL (Windows Subsystem for Linux)</li>
+<li>GNU Fortranコンパイラ</li>
+<li>Java14</li>
+<li>地図描画ソフト(Generic Mapping Tools)</li>
+<li>地震波形解析ソフト(Seismic Analysis Code)</li>
+<li>走時計算ソフトウェア(TauP)</li>
+<li>理論地震波形計算ソフトウェア(DSM)</li>
+<li>地震波形解析ツール(Kibrary)</li>
+</ol>
+</div><div class="cell markdown-cell"><ol start="0">
+<li>WSL (Windows Subsystem for Linux)をインストールする.</li>
+</ol>
+<ul>
+<li>Windows上でLinuxプログラムを動作できる仮想環境.</li>
+<li>GUI、またはPowerShellを使って、Windowsのオプション機能「Windows Subsystem for Linux」を有効にする. GUIであれば、スタート画面や設定アプリで「Windowsの機能1」まで入力して検索するか、コントロールパネルから「コントロールパネル\プログラム\Windowsの機能の有効化または無効化」と辿る.<br>
+<img src="resources/47A3D10573A8591B7CCB4B8113A9A2B7.jpg" alt="IMAGE" width="400" height="316"><br>
+<img src="resources/89EF01550E74FF50FBEA736709BE27E6.jpg" alt="IMAGE" width="400" height="179"><br>
+<img src="resources/96E7077C90781CBD0336D284166865FB.jpg" alt="IMAGE" width="400" height="675"><br>
+Windows Subsystem for Linux（Linux 用 Windows サブシステム）」と「仮想マシン プラットフォーム」を有効にする. 再起動を求められるので、再起動する.</li>
+<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">こちら</a>からカーネル更新プログラムをダンロードして、開いてインストール.</li>
+<li>Linuxディストリビューションをインストールする. Microsoft Storeアプリを起動して「WSL」を検索する. 表示されている「Ubuntu 20.04LTS」を選択しインストール.<br>
+<img src="resources/BF15963006BEA404CD103BD81C9EB06E.jpg" alt="IMAGE" width="400" height="316"></li>
+<li>Ubuntuをインストールした段階ではまだ有効化されていないので、初期化して有効にする必要がある. そのために、ストアアプリから起動ボタンを押すか、もしくはスタート画面からディストリビューションを選択.<br>
+<img src="resources/A78848E15B1A5E43928FF2CC20C8879C.jpg" alt="IMAGE" width="400" height="316"><br>
+<img src="resources/A410A369BA66001DFC15ACD94D39D55C.jpg" alt="IMAGE" width="400" height="139"><br>
+ユーザー名、パスワードを入力し初期化完了.</li>
+</ul>
+</div><div class="cell markdown-cell"><ol>
+<li>GNU Fortranコンパイラのインストール</li>
+</ol>
+<ul>
+<li>以下のコマンドでパッケージインデックスを更新.<br>
+<code>sudo apt update &amp;&amp; sudo apt -yV upgrade</code><br>
+パスワードを聞かれた場合は先ほど設定したパスワードを入力.</li>
+<li>以下のコマンドでgfortranをインストール<br>
+<code>sudo apt install gfortran-10 make gdb build-essential</code><br>
+<code>sudo ln -s `which gfortran-10` /usr/bin/gfortran</code></li>
+<li>以下のコマンドで正常にインストールされていることを確認.<br>
+<code>gfortran --version</code><br>
+問題なければ以下のように表示される.</li>
+</ul>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">GNU Fortran (Homebrew GCC 10.2.0_4) 10.2.0
+</div><div class="ace_line">Copyright (C) 2020 Free Software Foundation, Inc.
+</div><div class="ace_line">This is free software; see the source for copying conditions.  There is NO
+</div><div class="ace_line">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</div></div></div></pre>
+</div><div class="cell markdown-cell"><ol start="2">
+<li>Java14のインストール</li>
+</ol>
+<ul>
+<li>
+<p>以下のコマンドを1行ずつ実行してjava14をインストール<br>
+<code>sudo apt install openjdk-14-jdk</code></p>
+</li>
+<li>
+<p>環境変数 JAVA_HOME と PATH を設定する.<br>
+<code>export JAVA_HOME=”/usr/lib/jvm/java-14-openjdk-amd64” &gt;&gt; ~/.bashrc</code><br>
+<code>echo PATH=${JAVA_HOME}/bin:${PATH} &gt;&gt; ~/.zshrc</code><br>
+以下のコマンドで正しく追記されているかを確認する.<br>
+<code>tail ~/.zshrc</code><br>
+問題なければ以下のコマンドで反映.<br>
+<code>source ~/.zshrc</code></p>
+</li>
+<li>
+<p>以下のコマンドを実行してインストールを確認.<br>
+<code>java --version</code></p>
+</li>
+</ul>
+</div><div class="cell markdown-cell"><ol start="3">
+<li>地図描画ソフト(GMT)のインストール</li>
+</ol>
+<ul>
+<li>以下のコマンドを実行してGMTをインストールする.<br>
+<code>sudo apt-get install gmt gmt-dcw gmt-gshhg</code><br>
+<code>sudo apt-get install ghostscript</code><br>
+<code>sudo apt-get install gdal-bin graphicsmagick ffmpeg</code></li>
+<li>以下のテストを実行して正しくインストールされているかを確認する.<br>
+以下のリンクからスクリプトファイルをダウンロード.<br>
+<a href="https://bit.ly/32AEad4">https://bit.ly/32AEad4</a><br>
+以下のコマンドを実行して日本地図が表示されればOK.<br>
+<code>sh checkGMT.sh</code></li>
+<li>問題がなければ、日本地図が描画される.<br>
+<img src="resources/788557FC8A570E983CE4FB3CBDB4530A.jpg" alt="IMAGE" width="1240" height="1755"></li>
+</ul>
+</div><div class="cell markdown-cell"><ol start="4">
+<li>地震波形解析ソフト(SAC)のインストール</li>
+</ol>
+<ul>
+<li>下記のURLから圧縮ファイルをダウンロード<br>
+<a href="https://bit.ly/2PdZeTG">https://bit.ly/2PdZeTG</a></li>
+<li>展開すると「sac」というディレクトリができるので、以下のコマンドを実行する.<br>
+<code>tar xvf /mnt/c/Users/*"username"*/Downloads/sac-102.</code><br>
+<code>sudo mv ./sac /usr/local</code></li>
+<li>以下のコマンドを実行して環境変数を設定する.<br>
+<code>echo export SACHOME=/usr/local/sac &gt;&gt; ~/.bashrc</code><br>
+<code>echo export SACAUX=/usr/local/sac/aux &gt;&gt; ~/.bashrc</code><br>
+<code>echo export PATH=/usr/local/sac/bin:\$PATH &gt;&gt; ~/.bashrc</code><br>
+以下のコマンドで変更を反映.<br>
+<code>source ~/.bashrc</code></li>
+<li>以下のリンクからWindows用のXwindowシステムをダウンロード.<br>
+<a href="https://bit.ly/3tOQAKk">https://bit.ly/3tOQAKk</a><br>
+vcxsrv*.exeを管理者として実行(右クリックから).<br>
+VcXsrvを選択して「次へ」.<br>
+Download先はデフォルトのまま「インストール」.<br>
+<img src="resources/6186E44AA8B0452B23C27C70F4F005A6.jpg" alt="IMAGE" width="334" height="234"></li>
+<li>xlaunch.exe実行ファイルを起動.</li>
+<li>multiple window を選んで次へ、start no client を選んで次へ、Native openglのチェックを外し、Additional parameters for VcXsrvに"-ac"を追加して「次へ」.<br>
+<img src="resources/8DAB1EFF9D1CB7CB787B3A5A3D32C8A7.jpg" alt="IMAGE" width="510" height="367"></li>
+<li>Save configuration を押してデスクトプに保存し、完了を押してxlaunchを終了.</li>
+<li><code>Windowsキー + r</code>を押して, shell:startupと入力して検索し、開いたファイルブラウザ(スタートアップ)にデスクトップに保存したファイルをドラッグ＆ドロップで移動.</li>
+<li>以下のコマンドでbashrcに設定を追加.<br>
+<code>echo export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0 &gt;&gt; ~/.bashrc</code><br>
+<code>source ~/.bashrc</code></li>
+<li>ターミナル上で<code>sac</code>と入力してSACのプロンプトが表示されればOK.</li>
+</ul>
+</div><div class="cell markdown-cell"><ol start="5">
+<li>走時計算ソフトウェア(TauP)のインストール</li>
+</ol>
+<ul>
+<li>以下のコマンドでインストール.<br>
+<code>wget http://www.seis.sc.edu/downloads/TauP/TauP-2.5.0.tgz &amp;&amp; tar zxf TauP-2.5.0.tgz</code><br>
+<code>sudo mv TauP-2.5.0 /usr/local</code></li>
+<li>環境変数を設定する.<br>
+<code>echo export TAUP_HOME=/usr/local/TauP-2.5.0 &gt;&gt; ~/.bashrc</code><br>
+<code>echo export PATH=${TAUP_HOME}/bin:\$PATH &gt;&gt; ~/.bashrc</code><br>
+以下のコマンドで正しく追記されているかを確認する.<br>
+<code>tail ~/.zshrc</code><br>
+問題なければ以下のコマンドで反映.<br>
+<code>source ~/.zshrc</code></li>
+<li>以下のコマンドを実行して確認.<br>
+<code>taup_time -mod prem -h 400 -deg 80 -ph P,PcP,S,ScS</code><br>
+問題なければ以下のように表示される.</li>
+</ul>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">Model: prem
+</div><div class="ace_line">Distance   Depth   Phase   Travel    Ray Param  Takeoff  Incident  Purist    Purist
+</div><div class="ace_line">  (deg)     (km)   Name    Time (s)  p (s/deg)   (deg)    (deg)   Distance   Name 
+</div><div class="ace_line">-----------------------------------------------------------------------------------
+</div><div class="ace_line">   80.00   400.0   P        685.02     5.264     27.47    15.94    80.00   = P    
+</div><div class="ace_line">   80.00   400.0   PcP      690.81     4.361     22.47    13.15    80.00   = PcP  
+</div><div class="ace_line">   80.00   400.0   S       1255.48    10.272     29.09    17.19    80.00   = S    
+</div><div class="ace_line">   80.00   400.0   ScS     1272.85     8.179     22.77    13.61    80.00   = ScS
+</div></div></div></pre>
+<p>以下のコマンドを実行するとGUIでtaup_time, taup-pierce, taup_pathを実行できる.<br>
+<code>taup</code></p>
+</div><div class="cell markdown-cell"><ol start="6">
+<li>理論地震波形計算ソフトウェア(DSM)のインストール</li>
+</ol>
+<ul>
+<li>下記のリンクから圧縮ファイルをダウンロードして解凍する.<br>
+<a href="https://bit.ly/2Qnrq74">https://bit.ly/2Qnrq74</a></li>
+<li>以下のコマンドを実行してビルドする.<br>
+<code>make tipsv</code><br>
+*いくつかのWarning(警告)が出るが問題ない.</li>
+<li>以下のコマンドを実行してテスト計算を行い、ファイルが作成されることを確認する. 作成されたファイルはexample/にABC.20090101psv.spc及びXYZ.20090101psv.spcとして格納されている.<br>
+<code>./tipsv &lt; example/tet1.inf</code></li>
+</ul>
+</div><div class="cell markdown-cell"><ol start="7">
+<li>波形解析ツール(Kibrary)のインストール</li>
+</ol>
+<ul>
+<li>以下のコマンドでインストール.<br>
+<code>kins=$(mktemp) &amp;&amp; curl -sL -o $kins https://bit.ly/3xa6DVb &amp;&amp; /bin/sh $kins &amp;&amp; rm -f $kins</code><br>
+もしくは、<br>
+<code>kins=$(mktemp) &amp;&amp; wget -q -O $kins https://bit.ly/3xa6DVb &amp;&amp; /bin/sh $kins &amp;&amp; rm -f $kins</code></li>
+<li>以下のコマンドで問題なくインストールされているかを確認.<br>
+<code>~/Kibrary//bin/kibrary_operation</code><br>
+問題なければ、以下のようなメニューが表示される.</li>
+</ul>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">KIBRARY_HOME is /path/to/install.
+</div><div class="ace_line">JAVA is set to be 'java'. (/usr/bin/java)
+</div><div class="ace_line">CheckerBoardTest 1
+</div><div class="ace_line">DataRequestor 2
+</div><div class="ace_line">DataSelection 3
+</div><div class="ace_line">…
+</div></div></div></pre>
+</div></div>
+      <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = '第一回（Apr. 27, 2021）.html';
+if (e.keyCode === 37) window.location.href = '第二回（May 11, 2021）.html';
+}</script>
+    </body>
+    </html>
+  

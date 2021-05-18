@@ -1,0 +1,113 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- common.css -->
+      <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: -apple-system, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;height: auto;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 90%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+      <!-- ace-static.css -->
+      <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+      <style>.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}</style>
+      <!-- export.css -->
+      <style>
+        body{margin:0 auto;max-width:800px;line-height:1.4}
+        #nav{margin:5px 0 10px;font-size:15px}
+        #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+        #contentarea{font-size:15px;margin:16px 0}
+        .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+        .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+        .latex-cell{white-space:pre-wrap;}
+      </style>
+      <!-- User CSS -->
+      <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+    </head>
+    <body>
+      <div id="nav"><div>Next: <a href='コンピュータ環境構築(Windows10).html'>コンピュータ環境構築(Windows10)</a>, Previous: <a href='ホームディレクトリについて.html'>ホームディレクトリについて</a>, Up: <a href='index.html'>Index</a></div></div>
+      <div id="titlearea">
+        <h2>第二回（May 11, 2021）</h2>
+      </div>
+      <div id="contentarea"><div class="cell markdown-cell"><h2>本日の内容</h2>
+<ol>
+<li>本ゼミの目標と内容</li>
+<li>本日の内容</li>
+<li>実習</li>
+</ol>
+<p>以下は、前回(第一回)と同じ内容です. 未だ登録していない方、アンケートに回答されていない方は、下記のリンクから登録・回答よろしくお願いします.<br>
+*受講者の方は下記のリンクからSlackに登録してください.<br>
+<a href="https://join.slack.com/t/2021-vfd8698/shared_invite/zt-pfnlem9c-9d6csm12FtXduxZ~y9P_Ag">https://join.slack.com/t/2021-vfd8698/shared_invite/zt-pfnlem9c-9d6csm12FtXduxZ~y9P_Ag</a><br>
+*質問は#helpチャンネルに投稿してください.</p>
+<p>*授業前アンケートにご協力ください.<br>
+<a href="https://forms.gle/LsHX5saFGg8Rk8GP7">https://forms.gle/LsHX5saFGg8Rk8GP7</a></p>
+</div><div class="cell markdown-cell"><hr>
+<hr>
+</div><div class="cell markdown-cell"><h3>1. 本ゼミの目標と内容</h3>
+<ul>
+<li>スライドを用いて本ゼミの目標と、具体的な内容の導入を説明します.</li>
+<li><a href="">こちら</a>のリンクから授業中に用いたスライドを参照できます.</li>
+</ul>
+</div><div class="cell markdown-cell"></div><div class="cell markdown-cell"><h3>2. 本日の内容の説明</h3>
+<ul>
+<li>スネルの法則</li>
+<li>走時(波の到達時刻)の説明</li>
+<li>簡単に計算できる場合の例</li>
+<li>構造推定への応用の紹介</li>
+<li>走時計算ソフト(TauP)を用いた計算</li>
+</ul>
+<p>*スライドを用いて本日の実習内容の導入をおこないます. 授業後にスライドをアップします.</p>
+</div><div class="cell markdown-cell"><hr>
+<hr>
+</div><div class="cell markdown-cell"><h3>3. 基本的なUnixコマンドのまとめ</h3>
+<ul>
+<li>ディレクトリ移動、ファイルのコピー等の基本的なunixコマンドをまとめて説明します.</li>
+<li><a href="https://github.com/yuki0317/SyoZemi2021/raw/main/resume/May11/UNIX%E5%9F%BA%E7%A4%8E_ver2.pdf">こちら</a>のリンクからPDFを取得できます.</li>
+</ul>
+</div><div class="cell markdown-cell"><hr>
+<hr>
+</div><div class="cell markdown-cell"><h3>4. 実習</h3>
+<h4>4.1 2層の場合の走時(到達時刻)計算</h4>
+<p><img src="resources/E521B275F48BCF3E7B890421E7251952.jpg" alt="IMAGE" width="1037" height="716"><br>
+上図のような地震源、観測点配置の場合に震央距離及び走時を計算してみよう.<br>
+ただし<span class="MathJax" id="MathJax-Element-10-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-6" style="width: 4.016em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.604em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.677em, 1000em, 2.908em, -0.582em); top: -2.534em; left: 0em;"><span class="mrow" id="MathJax-Span-7"><span class="mi" id="MathJax-Span-8" style="font-family: STIXGeneral-Italic;">p</span><span class="mo" id="MathJax-Span-9" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="mn" id="MathJax-Span-10" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">0.15</span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.116em; vertical-align: -0.29em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">p=0.15</script>とする.</p>
+<h4>4.2 走時計算ソフト(TauP)で遊んでみよう</h4>
+<ul>
+<li>走時計算ソフト(TauP)を使って理論走時(地球内部構造モデルに対して計算される波の到達時刻)や、地球断面図上における波線(波の伝播経路)、走時曲線(震源から観測地点までの距離と到達時刻の関係を示すグラフ)を計算してみましょう.</li>
+<li>コマンド<code>taup</code>でTauPのGUIを起動して, ModelやDistance(deg), Depth(km)を変えてCalculateしてみる.</li>
+<li>以下のコマンドで波線や走時曲線を書き出してみる.</li>
+<li>波線の場合は, 以下のようにする.  "-mod"は地球内部構造モデルで, ここでは代表的なPREM(Dziewonski &amp; Anderson, 1981)を使う. "-h"は震源の深さ, "-deg"は震央距離, "-ph"は計算したいフェーズで.</li>
+</ul>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">taup_path -mod prem -h 100 -deg 80 -ph S,ScS -gmt &amp;&amp; sh taup_path.gmt
+</div></div></div></pre>
+<ul>
+<li>走時曲線を描く場合は以下のように記述して実行する. 書き出しのコマンドが"taup_curve"に変わったこと, "-deg"を書かないことに注意.</li>
+</ul>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">taup_curve -mod prem -h 100 -ph S,ScS -gmt &amp;&amp; sh taup_curve.gmt
+</div></div></div></pre>
+<h4>4.3 地震波形と走時曲線の比較</h4>
+<p>レコードセクション(地震波形を距離の順に並べて表示したグラフ)と走時曲線を重ねてプロットすることで、地震波形と走時曲線を比較してみる.</p>
+<ol>
+<li>以下のコマンドで必要なファイルをダウンロードする.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">wget https://www.dropbox.com/s/8bfztbiisozb64t/recordSectionT.tar.gz
+</div></div></div></pre>
+<p>もしくは、</p>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">curl https://www.dropbox.com/s/8bfztbiisozb64t/recordSectionT.tar.gz -O -J -L
+</div></div></div></pre>
+<ol start="2">
+<li>以下のコマンドでダウンロードした圧縮ファイルを解凍する.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">tar xvfz recordSectionT.tar.gz
+</div></div></div></pre>
+<ol start="3">
+<li>解凍したら以下のコマンドでプロットする.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">cd recordSection_T &amp;&amp; sh recordSection.sh
+</div></div></div></pre>
+</div></div>
+      <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = 'コンピュータ環境構築(Windows10).html';
+if (e.keyCode === 37) window.location.href = 'ホームディレクトリについて.html';
+}</script>
+    </body>
+    </html>
+  
