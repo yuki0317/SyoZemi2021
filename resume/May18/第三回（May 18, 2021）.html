@@ -62,7 +62,7 @@
 </div><div class="cell markdown-cell"><hr>
 <hr>
 </div><div class="cell markdown-cell"><h2>3. 実習</h2>
-<p>*ホームディレクトリとファイルの開き方についての説明を<a href="https://github.com/yuki0317/SyoZemi2021/blob/main/resume/May18/ホームディレクトリについて.html">こちら</a>におきましたので, 参考になさってください.</p>
+<p>*ホームディレクトリとファイルの開き方についての説明を<a href="./ホームディレクトリについて.html">こちら</a>におきましたので, 参考になさってください.</p>
 <h3>3.0 DSM(理論地震波形計算ソフト)の導入</h3>
 <ul>
 <li>以下のコマンドで必要なファイルをダンロードする.</li>
@@ -80,18 +80,18 @@
 <ul>
 <li>以下のコマンドを実行してビルドする.<br>
 <code>make tish</code></li>
-<li>以下のコマンドを実行してテスト計算を行い、ファイルが作成されることを確認する. 作成されたファイルはexample/にABC.20090101psv.spc及びXYZ.20090101psv.spcとして格納されている.</li>
+<li>以下のコマンドを実行してテスト計算を行い、ファイルが作成されることを確認する. 作成されたファイルはexamples/にtest1.1.spc及びtest1.2.spcとして格納されている.</li>
 </ul>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">./tish &lt; example/tet1.inf
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">./tish &lt; examples/test1.inf 
 </div></div></div></pre>
 <h3>3.1 理論地震波形の計算</h3>
 <ol>
 <li>以下のコマンドで必要なファイルをダンロードする.</li>
 </ol>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">wget https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line"> cd &amp;&amp; wget https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz
 </div></div></div></pre>
 <p>もしくは、</p>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">curl https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz -O -J -L
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">cd &amp;&amp; curl https://www.dropbox.com/s/87cwkgzulnp19k6/computeSeismogram.tar.gz -O -J -L
 </div></div></div></pre>
 <ol start="2">
 <li>以下のコマンドでダウンロードした圧縮ファイルを解凍する.</li>
@@ -106,7 +106,7 @@
 <ol start="4">
 <li>以下のコマンドで理論波形(SH)を計算する.</li>
 </ol>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">ln -s ~/tish-mpi-0.2.1/tish . &amp;&amp; ./tish &lt; MIASP_SH.inf &amp;&amp; cd ../..
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">ln -s ~/tish-mpi-0.2.1/tish . &amp;&amp; ./tish &lt; MIASP_SH.inf &amp;&amp; cd ..
 </div></div></div></pre>
 <ol start="5">
 <li>以下のコマンドで変換に必要なファイルをダウンロードする.</li>
@@ -119,6 +119,8 @@
 <ol start="6">
 <li>以下のコマンドで出力された周波数領域の計算結果を時間領域に変換する.</li>
 </ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">echo export PATH=~/Kibrary/bin:\$PATH >> ~/.zshrc
+</div></div></div></pre>
 <pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">kibrary_operation spcsac.prop
 </div></div></div></pre>
 <p>もしくは、</p>
@@ -139,10 +141,10 @@
 <ol>
 <li>以下のコマンドで必要なファイルをダウンロードする.</li>
 </ol>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">wget https://www.dropbox.com/s/j4btcowhodu4l2x/vstructure.tar.gz
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">cd &amp;&amp; wget https://www.dropbox.com/s/j4btcowhodu4l2x/vstructure.tar.gz
 </div></div></div></pre>
 <p>もしくは、</p>
-<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">curl https://www.dropbox.com/s/j4btcowhodu4l2x/vstructure.tar.gz -O -J -L
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">cd &amp;&amp; curl https://www.dropbox.com/s/j4btcowhodu4l2x/vstructure.tar.gz -O -J -L
 </div></div></div></pre>
 <ol start="2">
 <li>以下のコマンドでダウンロードした圧縮ファイルを解凍する.</li>
